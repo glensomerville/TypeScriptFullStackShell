@@ -6,6 +6,7 @@
 # IntelliJ project files
 *.iml
 .idea/
+.vscode/
 
 
 # Built/Transpiled files

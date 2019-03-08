@@ -2,12 +2,15 @@
   "name": "typescriptfullstackshell",
   "version": "1.0.0",
   "description": "demonstrate how to do full-stack TypeScript development",
-  "main": "src/start.js",
+  "main": "src/server/index.js",
   "scripts": {
-    "start": "npm install --only=prod && NODE_ENV=production node ./build/start.js",
-    "start:express": "nodemon --config \"./util/nodemon.json\"/",
-    "test": "ts-node ./src/start.ts test",
-    "build": "sh ./util/buildForProd.sh"
+    "start": "npm install --only=prod && NODE_ENV=production node ./build/index.js",
+    "start:server": "nodemon --config \"./nodemon.json\"/",
+    "start:client": "cd ./src/client && npm run start",
+    "build:client": "cd ./src/client && npm run build",
+    "test:client": "cd ./src/client && npm run test",
+    "test": "ts-node ./src/index.ts test",
+    "build": "sh ./scripts/buildForProd.sh"
   },
   "repository": {
     "type": "git",
@@ -29,22 +32,17 @@
   },
   "homepage": "https://github.com/seanpmaxwell/TypeScriptFullStackShell#readme",
   "dependencies": {
-    "@overnightjs/core": "^1.4.1",
-    "express": "^4.16.4",
-    "simple-color-print": "^1.0.5"
+    "express": "^4.16.4"
   },
   "devDependencies": {
-    "@types/body-parser": "^1.17.0",
-    "@types/express": "^4.16.0",
-    "@types/jasmine": "^3.3.7",
-    "@types/node": "^10.12.18",
-    "@types/supertest": "^2.0.7",
-    "jasmine": "^3.3.1",
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.10.5",
     "nodemon": "^1.18.10",
-    "supertest": "^3.4.1",
-    "ts-node": "^8.0.2",
+    "ts-node": "^8.0.3",
     "tsc": "^1.20150623.0",
-    "tslint": "^5.12.1",
-    "typescript": "^3.2.4"
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.3.3333"
   }
 }

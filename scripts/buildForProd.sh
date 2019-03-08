@@ -14,17 +14,14 @@ tsc --sourceMap false
 
 ### Bundle FrontEnd ###
 
-# Create the directory for React
-mkdir -p ./build/public/react/
-
 # Navigate to the react directory
-cd ./src/public/react/demo-react
+cd ./src/client
 
 # Build React code
 npm run build
 
 # Rename the folder
-mv build demo-react
+mv build client
 
 # Move the contains to the build/ dir
-mv demo-react ../../../../build/public/react/
+mv client ../../build
